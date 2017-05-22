@@ -101,7 +101,6 @@ app.post("/validate", function(req, res){
 		response.answer = true;
 		res.status(200).send(response);
 	} else {
-		res.send(response, 200);
 		res.status(200).send(response);
 	}
 });
