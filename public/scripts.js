@@ -24,6 +24,6 @@ $(document).ready(function(){
 		});
 	}
 
-
+	$('#go').on("click", validator);
 
 });
