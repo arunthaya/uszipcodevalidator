@@ -2,7 +2,11 @@ $(document).ready(function(){
 
 	$('#inputText').keypress(function(ev){
 		if(ev.which === 13){
-			validator();
+			if( !$(this).val() ){
+				alert("Enter a zip code with up to 5 numbers");
+			} else {
+				validator();
+			}
 		}
 	});
 
@@ -16,14 +20,23 @@ $(document).ready(function(){
 			dataType: "json",
 			success: function(data){
 				if (data.answer == false) {
-					alert("ZIP Code doesn't exist");
+
+					alert("Zip code entered is invalid");
+					$('#inputText').val('');
+
 				} else {
-					alert("Zip code does exist");
+					
+					alert("Zip code entered is valid");
+
 				}
 			}
 		});
 	}
 
-	$('#go').on("click", validator);
+	$('#go').on("click", function() {
+		if(!$(this).val()){
+			alert("Enter a zip code with up to 5 numbers");
+		}
+	});
 
 });
