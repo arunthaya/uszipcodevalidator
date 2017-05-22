@@ -36,6 +36,8 @@ $(document).ready(function(){
 	$('#go').on("click", function() {
 		if(!$(this).val()){
 			alert("Enter a zip code with up to 5 numbers");
+		} else {
+			validator();
 		}
 	});
 
